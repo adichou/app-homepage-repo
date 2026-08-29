@@ -1,6 +1,6 @@
 # CamMan ZhuShou Privacy Policy
 
-Last updated: August 28, 2026
+Last updated: August 29, 2026
 
 CamMan ZhuShou respects user privacy. This policy explains how the app handles information on iPhone and iPad.
 
