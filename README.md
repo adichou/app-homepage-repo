@@ -6,7 +6,7 @@ App Store Connect 元信息、审核备注、审核截图、订阅配置和发�
 
 ## Apps
 
-- [CamMan 助手 / CamMan Companion](./aldistudio.cam-media-man-mobile/)
+- [CamMan 助手 / CamMan ZhuShou](./aldistudio.cam-media-man-mobile/)
 
 GitHub Pages 预期地址：
 

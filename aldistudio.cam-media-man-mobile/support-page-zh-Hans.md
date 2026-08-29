@@ -32,7 +32,7 @@ CamMan 助手用于在 iPhone 和 iPad 上安全导出相机卡与照片图库�
 ## 联系支持
 
 - GitHub 支持：https://github.com/adichou/app-homepage-repo/issues
-- 隐私政策：https://adichou.github.io/app-homepage-repo/aldistudio.cam-media-man-mobile/#privacy
+- 隐私政策：https://adichou.github.io/app-homepage-repo/aldistudio.cam-media-man-mobile/privacy-zh-Hans.html
 - 用户协议：https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 联系时请提供 App 版本、设备型号、系统版本、操作步骤和错误提示。除非必要且确认可以安全分享，请勿上传私人照片或敏感文件。

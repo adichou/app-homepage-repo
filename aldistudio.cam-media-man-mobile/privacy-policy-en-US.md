@@ -1,12 +1,12 @@
-# CamMan Companion Privacy Policy
+# CamMan ZhuShou Privacy Policy
 
 Last updated: August 28, 2026
 
-CamMan Companion respects user privacy. This policy explains how the app handles information on iPhone and iPad.
+CamMan ZhuShou respects user privacy. This policy explains how the app handles information on iPhone and iPad.
 
 ## The developer does not collect data
 
-CamMan Companion requires no registration or sign-in, contains no advertising or third-party analytics SDK, and does not send the user's photos, video, files, tags, ratings, location, device identifiers, diagnostics, or usage data to a developer-operated server.
+CamMan ZhuShou requires no registration or sign-in, contains no advertising or third-party analytics SDK, and does not send the user's photos, video, files, tags, ratings, location, device identifiers, diagnostics, or usage data to a developer-operated server.
 
 ## Data processed locally
 

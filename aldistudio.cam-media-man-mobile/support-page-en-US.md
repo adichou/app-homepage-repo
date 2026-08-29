@@ -1,6 +1,6 @@
-# CamMan Companion Support
+# CamMan ZhuShou Support
 
-CamMan Companion helps photographers safely ingest camera cards and Photos media on iPhone and iPad, then organize a tag-based shooting-reference library.
+CamMan ZhuShou helps photographers safely ingest camera cards and Photos media on iPhone and iPad, then organize a tag-based shooting-reference library.
 
 ## Before an ingest
 
@@ -32,7 +32,7 @@ Enter a valid HTTPS webpage. Some sites block automated access, require sign-in,
 ## Contact support
 
 - GitHub support: https://github.com/adichou/app-homepage-repo/issues
-- Privacy policy: https://adichou.github.io/app-homepage-repo/aldistudio.cam-media-man-mobile/#privacy
+- Privacy policy: https://adichou.github.io/app-homepage-repo/aldistudio.cam-media-man-mobile/privacy-en-US.html
 - Terms of use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 Include the app version, device model, system version, steps, and visible error message. Do not attach private photos or sensitive files unless necessary and safe to share.
