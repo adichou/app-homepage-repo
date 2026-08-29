@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>CamMan 助手 / CamMan Companion</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f7fb;
+      --panel: rgba(255, 255, 255, .9);
+      --text: #172033;
+      --muted: #5c667a;
+      --line: #dce2ec;
+      --accent: #1769e0;
+      --accent-soft: #e8f1ff;
+      --shadow: 0 16px 46px rgba(28, 47, 80, .10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d111a;
+        --panel: rgba(25, 31, 43, .94);
+        --text: #f4f7ff;
+        --muted: #b2bdd0;
+        --line: #343e51;
+        --accent: #79adff;
+        --accent-soft: #172b4a;
+        --shadow: 0 20px 55px rgba(0, 0, 0, .24);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(62, 135, 255, .13), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.68 -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", sans-serif;
+    }
+    a { color: var(--accent); }
+    .shell { width: min(980px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 52px 0 24px; }
+    .brand { display: flex; gap: 18px; align-items: center; }
+    .mark {
+      width: 64px; height: 64px; border-radius: 18px;
+      display: grid; place-items: center;
+      color: white; font-size: 31px; font-weight: 780;
+      background: linear-gradient(145deg, #0f5ad6, #65a8ff);
+      box-shadow: var(--shadow);
+    }
+    h1 { margin: 0; font-size: clamp(30px, 6vw, 50px); line-height: 1.08; letter-spacing: -.035em; }
+    .tagline { margin: 9px 0 0; color: var(--muted); font-size: 18px; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    nav a, .lang-button {
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 8px 13px; background: var(--panel); color: var(--text);
+      text-decoration: none; font: inherit; cursor: pointer;
+    }
+    nav a:hover, .lang-button:hover { border-color: var(--accent); }
+    main { padding-bottom: 56px; }
+    .card {
+      margin: 18px 0; padding: clamp(22px, 5vw, 40px);
+      background: var(--panel); border: 1px solid var(--line); border-radius: 24px;
+      box-shadow: var(--shadow); backdrop-filter: blur(16px);
+    }
+    h2 { margin: 0 0 16px; font-size: 28px; letter-spacing: -.02em; }
+    h3 { margin: 28px 0 7px; font-size: 19px; }
+    p { margin: 10px 0; }
+    ul { padding-left: 1.25rem; }
+    li + li { margin-top: 7px; }
+    .hero-copy { font-size: 20px; max-width: 760px; }
+    .pill { display: inline-block; margin: 0 6px 7px 0; padding: 5px 10px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); font-weight: 650; }
+    .notice { border-left: 4px solid var(--accent); padding-left: 14px; color: var(--muted); }
+    footer { padding: 14px 0 46px; color: var(--muted); font-size: 14px; }
+    [data-lang="en"] { display: none; }
+    body.show-en [data-lang="zh"] { display: none; }
+    body.show-en [data-lang="en"] { display: block; }
+    span[data-lang] { display: inline; }
+    body.show-en span[data-lang="zh"] { display: none; }
+    body.show-en span[data-lang="en"] { display: inline; }
+  </style>
+</head>
+<body>
+  <header class="shell">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">C</div>
+      <div>
+        <h1><span data-lang="zh">CamMan 助手</span><span data-lang="en">CamMan Companion</span></h1>
+        <p class="tagline" data-lang="zh">相机卡安全导出、素材整理与拍摄参考</p>
+        <p class="tagline" data-lang="en">Safe camera-card ingest, media organization, and visual references</p>
+      </div>
+    </div>
+    <nav aria-label="Page navigation">
+      <a href="#features"><span data-lang="zh">功能</span><span data-lang="en">Features</span></a>
+      <a href="#support"><span data-lang="zh">支持</span><span data-lang="en">Support</span></a>
+      <a href="#privacy"><span data-lang="zh">隐私政策</span><span data-lang="en">Privacy</span></a>
+      <a href="#terms"><span data-lang="zh">用户协议</span><span data-lang="en">Terms</span></a>
+      <button class="lang-button" id="lang-toggle" type="button">English</button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="card" id="features">
+      <div data-lang="zh">
+        <h2>让 iPhone 或 iPad 成为导卡中枢</h2>
+        <p class="hero-copy">把相机卡中的照片、RAW 和视频导出到外置硬盘，连续处理多张源盘，在清理源文件前复核留存副本；导出后继续浏览、评分和分享素材。</p>
+        <p><span class="pill">源盘队列</span><span class="pill">目标副本复核</span><span class="pill">异常重传</span><span class="pill">本地处理</span></p>
+        <p>CamMan 还可以从照片 App、文件 App 或指定的 HTTPS 网页导入视觉参考，并用标签建立构图、光线、色彩、地点和风格资料库。</p>
+      </div>
+      <div data-lang="en">
+        <h2>Turn an iPhone or iPad into your ingest hub</h2>
+        <p class="hero-copy">Move photos, RAW, and video from camera cards to external storage, queue multiple sources, and review retained copies before clearing a card. Then browse, rate, and share the exported media.</p>
+        <p><span class="pill">Source queue</span><span class="pill">Destination recheck</span><span class="pill">Retransfer</span><span class="pill">Local processing</span></p>
+        <p>CamMan also imports visual references from Photos, Files, or a specified HTTPS webpage and organizes composition, lighting, color, location, and style ideas with tags.</p>
+      </div>
+    </section>
+
+    <section class="card" id="support">
+      <div data-lang="zh">
+        <h2>支持</h2>
+        <h3>导出前准备</h3>
+        <ul>
+          <li>完整的相机卡流程需要源卡和可写入的目标存储，通常通过兼容的 USB-C 集线器同时连接。</li>
+          <li>导出和源文件清理完成前，请保持两个设备连接。</li>
+          <li>首次使用建议开启“测试模式”，先用 10 个文件验证流程。</li>
+        </ul>
+        <h3>为什么“开始导出”不可用？</h3>
+        <p>请先选择有效的相机卡或照片图库来源，再选择可写入的目标目录。源卡与目标目录不能位于同一存储卷。</p>
+        <h3>导出中断后怎么办？</h3>
+        <p>重新打开 App 查看报告。失败或未完成的源文件会保留；可按报告处理同名冲突、重试失败项目或检查残留。</p>
+        <h3>联系支持</h3>
+        <p>公开支持入口为 <a href="https://github.com/adichou/app-homepage-repo/issues">GitHub Issues</a>。</p>
+        <p class="notice">请提供 App 版本、设备型号、系统版本、操作步骤和错误提示。除非必要且确认安全，请勿上传私人照片或敏感文件。</p>
+      </div>
+      <div data-lang="en">
+        <h2>Support</h2>
+        <h3>Before an ingest</h3>
+        <ul>
+          <li>A full camera-card workflow requires a source card and writable destination storage, usually connected through a compatible USB-C hub.</li>
+          <li>Keep both devices connected until ingest and source cleanup are complete.</li>
+          <li>For a first run, enable Test Mode to validate the workflow with 10 files.</li>
+        </ul>
+        <h3>Why is Start Export unavailable?</h3>
+        <p>Choose a valid camera-card or Photos source and a writable destination folder. The source and destination cannot be on the same storage volume.</p>
+        <h3>What should I do after an interrupted ingest?</h3>
+        <p>Open the app and review the report. Failed or unfinished source files remain in place. Use the report to resolve name conflicts, retry failed items, or inspect remaining files.</p>
+        <h3>Contact support</h3>
+        <p>The public support channel is <a href="https://github.com/adichou/app-homepage-repo/issues">GitHub Issues</a>.</p>
+        <p class="notice">Include the app version, device model, system version, steps, and visible error. Do not upload private photos or sensitive files unless necessary and safe.</p>
+      </div>
+    </section>
+
+    <section class="card" id="privacy">
+      <div data-lang="zh">
+        <h2>隐私政策</h2>
+        <p>最后更新：2026 年 8 月 28 日</p>
+        <h3>开发者不收集数据</h3>
+        <p>CamMan 助手不要求注册或登录，不包含广告或第三方分析 SDK，也不会把照片、视频、文件、标签、评分、位置、设备标识符、诊断信息或使用数据发送到开发者运营的服务器。</p>
+        <h3>本地处理</h3>
+        <p>App 可能在设备本地或用户选择的存储位置处理用户主动选择的媒体、相机卡与目录信息、参考图标签、评分、导出配置、进度与报告，以及本地完整性检查所需的文件大小或散列值。</p>
+        <h3>照片、文件与外置存储</h3>
+        <p>App 仅访问用户通过系统界面明确选择的照片、文件夹或存储卷。照片图库原件的移除需要 iOS 系统确认，移除后仍可在“最近删除”中恢复。外置源文件清理由用户发起；目标副本复核失败时，对应源文件会保留。</p>
+        <h3>用户输入的网址</h3>
+        <p>参考图功能可直接访问用户输入的 HTTPS 网页以发现图片。请求从设备直接发往第三方网站，不经过开发者服务器。第三方网站可能按其隐私政策接收正常网络请求信息。</p>
+        <h3>保留、删除与联系</h3>
+        <p>本地数据保留在 App 沙盒、照片图库或用户选择的位置，直到用户通过 App、照片 App、文件 App 或系统设置删除。卸载 App 不会自动删除已导出到外置存储的文件。隐私问题可通过 <a href="https://github.com/adichou/app-homepage-repo/issues">GitHub Issues</a> 联系。</p>
+      </div>
+      <div data-lang="en">
+        <h2>Privacy Policy</h2>
+        <p>Last updated: August 28, 2026</p>
+        <h3>The developer does not collect data</h3>
+        <p>CamMan Companion requires no registration or sign-in, contains no advertising or third-party analytics SDK, and does not send photos, video, files, tags, ratings, location, device identifiers, diagnostics, or usage data to a developer-operated server.</p>
+        <h3>Local processing</h3>
+        <p>The app may process user-selected media, camera-card and folder information, reference tags, ratings, export settings, progress, reports, and file sizes or digests required for local integrity checks on the device or in user-selected storage.</p>
+        <h3>Photos, files, and external storage</h3>
+        <p>The app accesses only photos, folders, or storage volumes explicitly selected through system interfaces. Removing Photos originals requires an iOS confirmation, and items remain recoverable in Recently Deleted. External-source cleanup is user initiated; if a destination recheck fails, the corresponding source file is retained.</p>
+        <h3>URLs entered by the user</h3>
+        <p>The reference feature may connect directly to an HTTPS webpage entered by the user to discover images. Requests go from the device to the third-party website and do not pass through a developer server. The website may receive ordinary network-request information under its own privacy policy.</p>
+        <h3>Retention, deletion, and contact</h3>
+        <p>Local data remains in the app sandbox, Photos, or user-selected storage until removed through the app, Photos, Files, or system settings. Uninstalling the app does not delete media exported to external storage. For privacy questions, use <a href="https://github.com/adichou/app-homepage-repo/issues">GitHub Issues</a>.</p>
+      </div>
+    </section>
+
+    <section class="card" id="terms">
+      <div data-lang="zh">
+        <h2>用户协议与订阅</h2>
+        <p>CamMan 助手使用 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple 标准最终用户许可协议</a>。</p>
+        <p>Pro 月付、半年付和年付方案提供相同服务，并通过 Apple 自动续期订阅结算。费用会从 Apple 账户扣款；除非在当前周期结束至少 24 小时前取消，否则订阅会自动续期。用户可在 App Store 账户设置中管理或取消订阅。</p>
+      </div>
+      <div data-lang="en">
+        <h2>Terms and subscriptions</h2>
+        <p>CamMan Companion uses <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard End User License Agreement</a>.</p>
+        <p>The monthly, six-month, and yearly Pro plans provide the same service and are billed as Apple auto-renewable subscriptions. Payment is charged to the Apple Account. The subscription renews automatically unless canceled at least 24 hours before the end of the current period. Users can manage or cancel it in App Store account settings.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span data-lang="zh">© 2026 CamMan 助手。所有媒体操作均由用户发起。</span>
+    <span data-lang="en">© 2026 CamMan Companion. All media operations are user initiated.</span>
+  </footer>
+
+  <script>
+    const button = document.getElementById('lang-toggle');
+    button.addEventListener('click', () => {
+      const showEnglish = !document.body.classList.contains('show-en');
+      document.body.classList.toggle('show-en', showEnglish);
+      document.documentElement.lang = showEnglish ? 'en' : 'zh-Hans';
+      button.textContent = showEnglish ? '简体中文' : 'English';
+    });
+  </script>
+</body>
+</html>
