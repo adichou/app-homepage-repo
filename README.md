@@ -19,7 +19,6 @@ App Store Connect 元信息、审核备注、审核截图、订阅配置和发�
 ```
 content/<appId>/            内容真源（唯一来源，不再手写 html）
 ├── privacy.zh.md / privacy.en.md          隐私政策全文
-├── terms.zh.md   / terms.en.md            用户协议与订阅说明
 ├── support.zh.md / support.en.md          支持渠道（渲染进全局支持页）
 ├── faq.zh.md     / faq.en.md              FAQ（“## 问题” 切分为条目）
 ├── docs/<slug>.zh.md / <slug>.en.md       用户文档（frontmatter: title, order）

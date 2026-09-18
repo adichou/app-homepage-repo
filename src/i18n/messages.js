@@ -43,16 +43,13 @@ export const messages = {
         features: '功能',
         faq: 'F&Q',
         changelog: '更新',
-        privacy: '隐私政策',
-        terms: '用户协议'
+        privacy: '隐私政策'
       },
       download: 'App Store 下载',
       featuresEyebrow: '功能',
       supportEyebrow: '支持',
       privacyEyebrow: '隐私',
-      termsEyebrow: '条款与订阅',
       privacyReadFull: '阅读完整隐私政策',
-      termsReadFull: '阅读用户协议',
       supportLinks: {
         docs: '安装与用户文档',
         faq: '常见问题',
@@ -81,10 +78,8 @@ export const messages = {
     },
     legal: {
       privacyTitle: '隐私政策',
-      termsTitle: '用户协议',
       updated: '最后更新',
       privacyEyebrow: '法律',
-      termsEyebrow: '法律',
       notFound: '没有找到该页面。'
     },
     support: {
@@ -147,16 +142,13 @@ export const messages = {
         features: 'Features',
         faq: 'F&Q',
         changelog: 'Updates',
-        privacy: 'Privacy Policy',
-        terms: 'Terms'
+        privacy: 'Privacy Policy'
       },
       download: 'Download on the App Store',
       featuresEyebrow: 'Features',
       supportEyebrow: 'Support',
       privacyEyebrow: 'Privacy',
-      termsEyebrow: 'Terms & Subscriptions',
       privacyReadFull: 'Read the full Privacy Policy',
-      termsReadFull: 'Read the Terms of Use',
       supportLinks: {
         docs: 'Setup & user docs',
         faq: 'FAQ',
@@ -185,10 +177,8 @@ export const messages = {
     },
     legal: {
       privacyTitle: 'Privacy Policy',
-      termsTitle: 'Terms of Use',
       updated: 'Last updated',
       privacyEyebrow: 'Legal',
-      termsEyebrow: 'Legal',
       notFound: 'This page could not be found.'
     },
     support: {

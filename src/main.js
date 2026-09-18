@@ -21,7 +21,6 @@ const routeDefs = [
   { path: '/apps/:app/faq', name: 'app-faq', component: FaqPage },
   { path: '/apps/:app/changelog', name: 'app-changelog', component: ChangelogPage },
   { path: '/apps/:app/privacy', name: 'app-privacy', component: LegalPage, meta: { legal: 'privacy' } },
-  { path: '/apps/:app/terms', name: 'app-terms', component: LegalPage, meta: { legal: 'terms' } },
   { path: '/support', name: 'support', component: SupportPage },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound }
 ]

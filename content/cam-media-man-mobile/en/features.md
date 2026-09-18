@@ -5,19 +5,19 @@ order: 2
 
 Whether you are a photography enthusiast or a working professional, the first thing you do after a shoot is figure out how to offload the card, and the second is how to review what you just copied. In the past that meant carrying a laptop, buying a card-dumping hard drive, or packing stacks of spare cards — expensive, single-purpose solutions, some requiring dedicated hardware, none really designed around how shooters actually work.
 
-I am a photographer myself, and this problem bothered me for years. So I built the CamMan app to solve it.
+I am a photographer myself, and this problem bothered me for years. So I built CamMan ZhuShou App to solve it.
 
 # How It Works
 
-Connect external storage to your iPhone or iPad through a USB-C hub, then let CamMan handle reading and writing on that storage for card offloading and transfers.
+Connect external storage to your iPhone or iPad through a USB-C hub, then let CamMan ZhuShou App handle reading and writing on that storage for card offloading and transfers.
 
-![How CamMan works](image/tech-flow.svg)
+![How CamMan ZhuShou App works](image/tech-flow.svg)
 
 Moving files from a camera card to an external drive is essentially "copy + verify + delete":
 
 1. **Copy files**: files are copied in segments into a hidden staging area on the destination while a SHA-256 digest of the source is computed; a power-saving mode reduces heat and battery drain.
 2. **Verify copies**: after copying, each staged file is read back and put through a triple check — byte count, SHA-256 digest against the source, plus a dedicated JPEG integrity scan that catches files truncated or left unfinished mid-transfer. Only when everything passes is the file atomically promoted out of staging and the result written to a persistent journal, ready for the deletion step.
-3. **Delete originals**: source files on the card are deleted only after every copy has verified. When done, CamMan scans the card and lists any files that were not exported, so you can confirm before clearing it.
+3. **Delete originals**: source files on the card are deleted only after every copy has verified. When done, the app scans the card and lists any files that were not exported, so you can confirm before clearing it.
 
 **Automatic retry on failures**: transient I/O errors during copy or verification (a USB-C hiccup, a flaky connector) trigger automatic retries with exponential backoff — roughly 1s, 2s, then 4s, up to 3 attempts, so concurrent files don't stampede the bus at once. Files that still fail, along with name conflicts, are listed in the result report, where you can start a retransfer right from the report page — files are re-copied from the card and re-verified against SHA-256 before replacing the destination copy.
 
@@ -35,7 +35,7 @@ Batch export photos, RAW files, and video from camera cards to an external drive
 2. On the Export Media tab, pick the source and destination. To process several cards in a row, add them all to the source queue.
 3. Adjust concurrency and power-saving mode as needed, then tap Start Export.
 4. When the export finishes, review the result report: start a retransfer for failed files right from the report page, and compare name conflicts one by one to overwrite or skip.
-5. To empty the camera card, open Clean Up Source from the report: mark any file you are unsure about for retransfer, then confirm to delete the rest — CamMan only deletes source files whose copies still verify.
+5. To empty the camera card, open Clean Up Source from the report: mark any file you are unsure about for retransfer, then confirm to delete the rest — the app only deletes source files whose copies still verify.
 
 # Browse Media
 

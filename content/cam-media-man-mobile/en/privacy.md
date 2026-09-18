@@ -7,11 +7,11 @@ updated: 2026-08-29
 
 Last updated: August 29, 2026
 
-CamMan ZhuShou respects user privacy. This policy explains how the app handles information on iPhone and iPad.
+CamMan ZhuShou App respects user privacy. This policy explains how the app handles information on iPhone and iPad.
 
 ## The developer does not collect data
 
-CamMan ZhuShou requires no registration or sign-in, contains no advertising or third-party analytics SDK, and does not send the user's photos, video, files, tags, ratings, location, device identifiers, diagnostics, or usage data to a developer-operated server.
+CamMan ZhuShou App requires no registration or sign-in, contains no advertising or third-party analytics SDK, and does not send the user's photos, video, files, tags, ratings, location, device identifiers, diagnostics, or usage data to a developer-operated server.
 
 ## Data processed locally
 

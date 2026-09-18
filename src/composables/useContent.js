@@ -125,7 +125,7 @@ export function useContent() {
     return ''
   }
 
-  // 单文件区块：privacy / terms / support
+  // 单文件区块：privacy / support
   function getSection(app, section, locale) {
     return findRecord(app, section, '', locale)
   }
