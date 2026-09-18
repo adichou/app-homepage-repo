@@ -7,7 +7,12 @@
         {{ t('portal.heroLine2') }}
       </h1>
       <p class="mt-6 max-w-3xl text-[15.5px] leading-8" style="color: var(--ink-soft)">
-        {{ t('portal.intro') }}
+        {{ t('portal.intro') }}{{ t('portal.blogLead') }}<a
+          :href="t('portal.blogUrl')"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: var(--accent)"
+        >{{ t('portal.blogUrl') }}</a>
       </p>
     </section>
 

@@ -27,6 +27,8 @@ export const messages = {
       heroLine2: '让生活，既降本，又增 “笑”。',
       intro:
         '我是一名上有老，下有小的中年软件工程师。我喜欢开发实用而靠谱的 APP。这个站点是我的 APP 大本营，欢迎各界人士捧场。',
+      blogLead: '也欢迎大家围观我的博客站点：',
+      blogUrl: 'https://note.adichou.cn/',
       appsEyebrow: '应用',
       appsTitle: '全部应用',
       viewApp: '了解详情',
@@ -126,6 +128,8 @@ export const messages = {
       heroLine2: 'lower costs, more delight.',
       intro:
         'I’m a middle-aged software engineer with family to care for. I love to build practical and reliable apps. This site is my app hub. Everyone is welcome to stop by.',
+      blogLead: 'Also feel free to check out my blog: ',
+      blogUrl: 'https://note.adichou.cn/',
       appsEyebrow: 'Apps',
       appsTitle: 'All apps',
       viewApp: 'Learn more',
