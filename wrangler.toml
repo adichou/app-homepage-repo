@@ -1,0 +1,8 @@
+# Cloudflare Workers 静态资产部署配置（Workers Builds: npm run build → npx wrangler deploy）
+name = "app-homepage-repo"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./dist"
+# SPA 深链路由：未命中路径回退 index.html
+not_found_handling = "single-page-application"

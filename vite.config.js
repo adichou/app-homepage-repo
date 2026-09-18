@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
-  // GitHub Pages 项目站点部署在 /app-homepage-repo/ 子路径下
-  base: '/app-homepage-repo/',
+  // 默认根路径（Cloudflare Workers / 本地开发）；GitHub Pages 构建时用 VITE_BASE 覆盖为子路径
+  base: process.env.VITE_BASE || '/',
   plugins: [vue()],
   resolve: {
     alias: {
