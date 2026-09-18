@@ -1,3 +1,8 @@
+---
+type: privacy
+updated: 2026-08-29
+---
+
 # CamMan ZhuShou Privacy Policy
 
 Last updated: August 29, 2026
@@ -48,7 +53,3 @@ The app does not collect personal information from children and provides no soci
 ## Changes
 
 If the app's data practices change, this policy and the App Store privacy disclosure will be updated as applicable.
-
-## Contact
-
-- Privacy and support: https://github.com/adichou/app-homepage-repo/issues

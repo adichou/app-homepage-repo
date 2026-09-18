@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="ALDi Studio 应用官网：产品主页、文档、常见问题、更新日志、支持与隐私政策。">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>ALDi Studio · 应用官网</title>
+    <script>
+      // 首帧前应用主题，避免闪烁：localStorage 记录的手动选择优先，否则跟随系统
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('ah:theme')
+          var dark =
+            stored === 'dark' ||
+            (stored !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <noscript>
+        <p style="font-family: system-ui; padding: 2rem; max-width: 40rem; margin: 0 auto;">
+          本站点需要启用 JavaScript 才能浏览。
+        </p>
+      </noscript>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
