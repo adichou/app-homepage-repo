@@ -2,8 +2,8 @@
   <div v-if="app" class="animate-fade-in" :style="accentStyle">
     <!-- 产品头部 -->
     <section class="shell pb-2 pt-14 sm:pt-16">
-      <div class="flex flex-col gap-7 sm:flex-row sm:items-center">
-        <AppIcon :app="app" :size="92" />
+      <div class="flex items-center gap-6 sm:gap-7">
+        <AppIcon :app="app" :size="92" class="shrink-0" />
         <div>
           <h1 class="font-serif text-[clamp(1.9rem,5vw,2.8rem)] font-bold leading-tight tracking-tight" style="color: var(--ink)">
             {{ meta.name }}
