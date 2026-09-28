@@ -6,6 +6,7 @@
           <span class="font-serif text-[17px] font-bold tracking-tight" style="color: var(--ink)">{{ t('site.name') }}</span>
           <span class="text-[11px] uppercase" style="color: var(--ink-mute); letter-spacing: 0.18em">{{ t('site.wordmarkSuffix') }}</span>
         </RouterLink>
+        <span class="h-3 w-px self-center" style="background: var(--line)" aria-hidden="true"></span>
         <a
           href="https://note.adichou.cn/"
           target="_blank"
