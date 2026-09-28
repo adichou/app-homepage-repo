@@ -10,6 +10,9 @@
       <AppIcon :app="app" :size="42" />
       <div class="min-w-0">
         <h3 class="font-serif text-[17px] font-bold leading-6 tracking-tight" style="color: var(--ink)">{{ meta.name }}</h3>
+        <p v-if="meta.updatedAt" class="mt-0.5 text-[11.5px] leading-4" style="color: var(--accent)">
+          {{ t('portal.recentUpdate') }} v{{ meta.version }} · {{ meta.updatedAt }}
+        </p>
         <p class="mt-0.5 line-clamp-2 text-[13px] leading-5" style="color: var(--ink-mute)">{{ meta.tagline }}</p>
       </div>
       <svg class="ml-auto h-4 w-4 flex-none opacity-0 transition-opacity group-hover:opacity-100" style="color: var(--accent)" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -34,7 +37,7 @@ const props = defineProps({
   app: { type: Object, required: true }
 })
 
-const { locale } = useLocale()
+const { locale, t } = useLocale()
 const { getAppMeta } = useContent()
 const meta = computed(() => getAppMeta(props.app.id, locale.value))
 

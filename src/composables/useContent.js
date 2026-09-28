@@ -100,16 +100,18 @@ function findRecord(app, slug, dir, locale) {
 // ---------- 对外 API ----------
 
 export function useContent() {
-  // 应用元信息：<locale>/index.md frontmatter（name/tagline/category/tags/repo）
+  // 应用元信息：<locale>/index.md frontmatter（name/tagline/category/tags/repo/version/updatedAt）
   function getAppMeta(app, locale) {
     const record = findRecord(app, 'index', '', locale)
-    if (!record) return { name: app, tagline: '', category: '', tags: '', repo: '' }
+    if (!record) return { name: app, tagline: '', category: '', tags: '', repo: '', version: '', updatedAt: '' }
     return {
       name: record.meta.name || app,
       tagline: record.meta.tagline || '',
       category: record.meta.category || '',
       tags: Array.isArray(record.meta.tags) ? record.meta.tags.join(' · ') : String(record.meta.tags || ''),
-      repo: String(record.meta.repo || '')
+      repo: String(record.meta.repo || ''),
+      version: String(record.meta.version || ''),
+      updatedAt: String(record.meta.updatedAt || '')
     }
   }
 
