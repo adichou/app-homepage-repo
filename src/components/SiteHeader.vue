@@ -7,8 +7,9 @@
       </RouterLink>
 
       <nav class="flex items-center gap-5" :aria-label="t('nav.home')">
-        <!-- 应用下拉菜单：按分类分组列出全部应用 -->
-        <div class="relative hidden sm:block" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
+        <!-- 应用下拉 + NOTE：紧邻成组（窄屏隐藏，与原 APPS 行为一致） -->
+        <div class="hidden items-center gap-2 sm:flex">
+          <div class="relative" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
           <button
             type="button"
             class="nav-link flex items-center gap-1 text-[13.5px]"
@@ -54,6 +55,7 @@
           </transition>
         </div>
         <a href="https://note.adichou.cn/" target="_blank" rel="noopener noreferrer" class="nav-link">{{ t('nav.note') }}</a>
+        </div>
         <RouterLink :to="{ name: supportName }" class="nav-link">{{ t('nav.support') }}</RouterLink>
         <div class="flex items-center gap-2">
           <LangSwitch />
