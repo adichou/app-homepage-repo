@@ -10,6 +10,7 @@ export const messages = {
     nav: {
       apps: '应用',
       note: 'NOTE',
+      noteTitle: '我的博客站点',
       support: '支持',
       home: '首页'
     },
@@ -113,6 +114,7 @@ export const messages = {
     nav: {
       apps: 'Apps',
       note: 'NOTE',
+      noteTitle: 'My blog',
       support: 'Support',
       home: 'Home'
     },

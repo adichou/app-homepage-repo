@@ -1,15 +1,24 @@
 <template>
   <header class="sticky top-0 z-40 backdrop-blur-md" :style="{ background: 'var(--panel)', borderBottom: '1px solid var(--line)' }">
     <div class="shell flex h-14 items-center justify-between gap-4">
-      <RouterLink :to="{ name: portalName }" class="group flex items-baseline gap-2">
-        <span class="font-serif text-[17px] font-bold tracking-tight" style="color: var(--ink)">{{ t('site.name') }}</span>
-        <span class="text-[11px] uppercase" style="color: var(--ink-mute); letter-spacing: 0.18em">{{ t('site.wordmarkSuffix') }}</span>
-      </RouterLink>
+      <div class="flex items-baseline gap-2">
+        <RouterLink :to="{ name: portalName }" class="group flex items-baseline gap-2">
+          <span class="font-serif text-[17px] font-bold tracking-tight" style="color: var(--ink)">{{ t('site.name') }}</span>
+          <span class="text-[11px] uppercase" style="color: var(--ink-mute); letter-spacing: 0.18em">{{ t('site.wordmarkSuffix') }}</span>
+        </RouterLink>
+        <a
+          href="https://note.adichou.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[11px] uppercase transition-opacity hover:opacity-60"
+          style="color: var(--ink-mute); letter-spacing: 0.18em"
+          :title="t('nav.noteTitle')"
+        >{{ t('nav.note') }}</a>
+      </div>
 
       <nav class="flex items-center gap-5" :aria-label="t('nav.home')">
-        <!-- 应用下拉 + NOTE：紧邻成组（窄屏隐藏，与原 APPS 行为一致） -->
-        <div class="hidden items-center gap-2 sm:flex">
-          <div class="relative" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
+        <!-- 应用下拉菜单：按分类分组列出全部应用 -->
+        <div class="relative hidden sm:block" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
           <button
             type="button"
             class="nav-link flex items-center gap-1 text-[13.5px]"
@@ -53,8 +62,6 @@
               </div>
             </div>
           </transition>
-        </div>
-        <a href="https://note.adichou.cn/" target="_blank" rel="noopener noreferrer" class="nav-link">{{ t('nav.note') }}</a>
         </div>
         <RouterLink :to="{ name: supportName }" class="nav-link">{{ t('nav.support') }}</RouterLink>
         <div class="flex items-center gap-2">
