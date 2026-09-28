@@ -53,6 +53,7 @@
             </div>
           </transition>
         </div>
+        <a href="https://note.adichou.cn/" target="_blank" rel="noopener noreferrer" class="nav-link">{{ t('nav.note') }}</a>
         <RouterLink :to="{ name: supportName }" class="nav-link">{{ t('nav.support') }}</RouterLink>
         <div class="flex items-center gap-2">
           <LangSwitch />
