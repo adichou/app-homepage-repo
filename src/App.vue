@@ -9,18 +9,41 @@
       </RouterView>
     </main>
     <SiteFooter />
+
+    <!-- 全站支持入口：固定右下角 -->
+    <RouterLink
+      :to="{ name: supportName }"
+      class="fixed bottom-5 right-5 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-lg transition-transform hover:-translate-y-0.5"
+      style="background: var(--panel); border: 1px solid var(--line); color: var(--accent)"
+      :aria-label="t('nav.support')"
+      :title="t('nav.support')"
+    >
+      <svg class="h-5 w-5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path
+          d="M8 2.2a5.3 5.3 0 1 1-4.35 8.35L2.3 13.7l.85-3.25A5.3 5.3 0 0 1 8 2.2Z"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        />
+        <circle cx="5.9" cy="7.5" r="0.85" fill="currentColor" />
+        <circle cx="8" cy="7.5" r="0.85" fill="currentColor" />
+        <circle cx="10.1" cy="7.5" r="0.85" fill="currentColor" />
+      </svg>
+    </RouterLink>
   </div>
 </template>
 
 <script setup>
-import { watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useLocale } from '@/i18n'
 import SiteHeader from '@/components/SiteHeader.vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 
 const route = useRoute()
-const { setLocale } = useLocale()
+const { t, setLocale } = useLocale()
+
+const supportName = computed(() => `support${route.meta.locale === 'en' ? '-en' : ''}`)
 
 // 语言跟随路由（zh 默认无前缀 / en 镜像到 /en/）
 watch(

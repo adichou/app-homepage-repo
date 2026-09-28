@@ -17,8 +17,8 @@
       </div>
 
       <nav class="flex items-center gap-5" :aria-label="t('nav.home')">
-        <!-- 应用下拉菜单：按分类分组列出全部应用 -->
-        <div class="relative hidden sm:block" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
+        <!-- 应用下拉菜单：按分类分组列出全部应用（移动端点击展开，桌面端悬停/点击） -->
+        <div class="relative" @mouseenter="appsOpen = true" @mouseleave="appsOpen = false">
           <button
             type="button"
             class="nav-link flex items-center gap-1 text-[13.5px]"
@@ -34,8 +34,8 @@
           </button>
 
           <transition name="dd">
-            <div v-if="appsOpen" class="absolute left-1/2 top-full w-[20rem] -translate-x-1/2 pt-2">
-              <div class="overflow-hidden rounded-xl shadow-lg" style="background: var(--panel); border: 1px solid var(--line)">
+            <div v-if="appsOpen" class="absolute right-0 top-full pt-2 sm:right-auto sm:left-1/2 sm:-translate-x-1/2">
+              <div class="w-[min(20rem,calc(100vw-2.5rem))] overflow-hidden rounded-xl shadow-lg" style="background: var(--panel); border: 1px solid var(--line)">
                 <template v-for="(group, gi) in appGroups" :key="group.category">
                   <div v-if="gi > 0" style="border-top: 1px solid var(--line)"></div>
                   <div class="px-3 pb-1 pt-2.5 text-[11px] uppercase tracking-widest" style="color: var(--ink-mute)">
@@ -63,7 +63,6 @@
             </div>
           </transition>
         </div>
-        <RouterLink :to="{ name: supportName }" class="nav-link">{{ t('nav.support') }}</RouterLink>
         <div class="flex items-center gap-2">
           <LangSwitch />
           <ThemeToggle />
@@ -97,7 +96,6 @@ function appName(app) {
 
 const suffix = computed(() => (route.meta.locale === 'en' ? '-en' : ''))
 const portalName = computed(() => `portal${suffix.value}`)
-const supportName = computed(() => `support${suffix.value}`)
 const appHomeName = computed(() => `app-home${suffix.value}`)
 
 const appsOpen = ref(false)
