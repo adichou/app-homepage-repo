@@ -63,4 +63,4 @@ npm run format:content   # 中文与西文之间自动加空格（content/ 目�
 ## Apps
 
 - [CamMan 助手 / CamMan ZhuShou](https://adichou.github.io/app-homepage-repo/apps/camman/) — 相机卡安全导出、素材整理与拍摄参考（iPhone · iPad）
-- [智能体团队看板 / Agent Team Board](https://github.com/adichou/agent-team-board) — 需求看板、AI 分析与 AI 开发、版本发布、命令执行；开源应用（官网直接跳转 GitHub），最近更新 v1.0.0 · 2026-09-28
+- [智能体团队看板 / Agent Team Board](https://github.com/adichou/agent-team-board) — 需求看板、AI 分析与 AI 开发、版本发布、命令执行；开源应用（官网直接跳转 GitHub），最近更新 v1.0.1 · 2026-09-29

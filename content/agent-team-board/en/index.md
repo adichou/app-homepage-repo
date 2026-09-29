@@ -4,6 +4,6 @@ tagline: Requirements board, AI analysis and development, releases, and command 
 category: Development
 tags: [Agent plugin, nodejs, Open Source]
 repo: https://github.com/adichou/agent-team-board
-version: 1.0.0
-updatedAt: 2026-09-28
+version: 1.0.1
+updatedAt: 2026-09-29
 ---

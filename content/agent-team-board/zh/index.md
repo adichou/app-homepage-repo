@@ -4,6 +4,6 @@ tagline: 需求看板、AI 分析与 AI 开发、版本发布、命令执行—�
 category: 开发
 tags: [Agent 插件, nodejs, 开源]
 repo: https://github.com/adichou/agent-team-board
-version: 1.0.0
-updatedAt: 2026-09-28
+version: 1.0.1
+updatedAt: 2026-09-29
 ---
